@@ -16,8 +16,8 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
   try {
     // Send email to The Share Samosa internal team
     const { error } = await resend.emails.send({
-      from: "contact@sharesamosa.com",
-      to: ["kunal@sharesamosa.com"],
+      from: "thesharesamosa@gmail.com",
+      to: ["thesharesamosa@gmail.com"],
       subject: `📩 New Inquiry from ${name} - The Share Samosa`,
       html: `
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
 
     // Send thank-you email to user
     await resend.emails.send({
-      from: "no-reply@sharesamosa.com",
+      from: "thesharesamosa@gmail.com",
       to: [email],
       subject: `Thanks for contacting The Share Samosa!`,
       html: `
@@ -109,7 +109,7 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
           ${message}
         </blockquote>
         <p style="font-size: 16px; color: #333;">If your message is urgent, you can reach us directly at 
-          <a href="mailto:kunal@sharesamosa.com" style="color: #e67e22;">kunal@sharesamosa.com</a>.
+          <a href="mailto:thesharesamosa@gmail.com" style="color: #e67e22;">thesharesamosa@gmail.com</a>.
         </p>
         <p style="margin-top: 30px; font-size: 16px; color: #333;">
           Best regards,<br>
@@ -118,8 +118,8 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
         <p style="font-size: 14px; color: #777;">
           📞 +91-7004689636<br>
-          🌐 <a href="https://sharesamosa.com" style="color: #e67e22;">sharesamosa.com</a><br>
-          📧 <a href="mailto:kunal@sharesamosa.com" style="color: #e67e22;">kunal@sharesamosa.com</a>
+          🌐 <a href="https://thesharesamosa.com" style="color: #e67e22;">thesharesamosa.com</a><br>
+          📧 <a href="mailto:kunal@sharesamosa.com" style="color: #e67e22;">thesharesamosa@gmail.com</a>
         </p>
       </td>
     </tr>
