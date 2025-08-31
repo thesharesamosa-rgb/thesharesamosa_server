@@ -16,7 +16,7 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
   try {
     // Send email to The Share Samosa internal team
     const { error } = await resend.emails.send({
-      from: "thesharesamosa@gmail.com",
+      from: "noreply@thesharesamosa.com",
       to: ["thesharesamosa@gmail.com"],
       subject: `📩 New Inquiry from ${name} - The Share Samosa`,
       html: `
@@ -78,12 +78,13 @@ const mailSender = async (req: Request, res: Response, next: NextFunction) => {
     });
 
     if (error) {
+      console.log(error)
       return next(new ErrorHandler("Failed to send email to The Share Samosa team", 500));
     }
 
     // Send thank-you email to user
     await resend.emails.send({
-      from: "thesharesamosa@gmail.com",
+      from: "noreply@thesharesamosa.com",
       to: [email],
       subject: `Thanks for contacting The Share Samosa!`,
       html: `
