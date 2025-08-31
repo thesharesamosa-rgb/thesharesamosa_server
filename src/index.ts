@@ -1,12 +1,12 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
-import dotevn from 'dotenv';
+import dotenv from 'dotenv';
 import mailRouter from './routes/mail.route';
 import axios from "axios";
 import cron from 'node-cron';
 
 
-dotevn.config();
+dotenv.config();
 const app = express();
 
 const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [];
